@@ -1,7 +1,22 @@
 {
-  "name": "react-modal-hook",
+  "name": "@lasbe/react-modal",
   "version": "0.1.0",
-  "private": true,
+  "private": "false",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "browser": "./browser/specific/main.js",
+  "author": {
+    "name": "LasBe",
+    "email": "devlasbe@gmail.com",
+    "url": "https://lasbe.tistory.com/"
+  },
+  "description": "누구나 쉽게 사용할 수 있는 리액트 모달 라이브러리입니다.",
+  "keywords": [
+    "react",
+    "modal",
+    "useModal",
+    "animation"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -20,7 +35,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "rm -rf dist && mkdir dist && tsc"
   },
   "eslintConfig": {
     "extends": [
