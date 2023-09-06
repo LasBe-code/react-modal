@@ -1,10 +1,10 @@
-export type ModalContentType = string | React.ReactElement | undefined;
+export type ModalContentType = string | React.ReactElement;
 
 export type ModalContentsType =
   | {
-      header: ModalContentType;
-      body: ModalContentType;
-      footer: ModalContentType;
+      header?: ModalContentType;
+      body?: ModalContentType;
+      footer?: ModalContentType;
     }
   | undefined;
 
@@ -28,5 +28,5 @@ export type ModalSetType =
 export type OpenModalType = {
   header: ModalContentType;
   body: ModalContentType;
-  footer: ModalContentType;
+  footer?: ModalContentType;
 };
