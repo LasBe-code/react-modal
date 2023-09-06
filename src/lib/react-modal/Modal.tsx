@@ -20,12 +20,12 @@ export const Modal = () => {
     }
   }, [modalData.isOpen]);
   return modalData.isOpen ? (
-    <div className="react-modal-dimmer">
+    <div className="modal-dimmer">
       {!!modalData.modalContents && (
-        <div className={`react-modal-container ${modalData.isAnimation}`}>
-          {!!modalData.modalContents.header && <div className="react-modal-header">{modalData.modalContents.header}</div>}
-          {!!modalData.modalContents.body && <div className="react-modal-body">{modalData.modalContents.body}</div>}
-          {!!modalData.modalContents.footer && <div className="react-modal-footer">{modalData.modalContents.footer}</div>}
+        <div className={`modal-container ${modalData.isAnimation}`}>
+          {!!modalData.modalContents.header && <div className="modal-header">{modalData.modalContents.header}</div>}
+          {!!modalData.modalContents.body && <div className="modal-body">{modalData.modalContents.body}</div>}
+          {!!modalData.modalContents.footer && <div className="modal-footer">{modalData.modalContents.footer}</div>}
         </div>
       )}
     </div>
