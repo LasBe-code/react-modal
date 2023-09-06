@@ -1,7 +1,7 @@
 /*
   Modal Style / Start
 */
-.react-modal-dimmer {
+.modal-dimmer {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,31 +15,33 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.react-modal-container {
+.modal-container {
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: auto;
+  max-width: 80%;
   min-width: 300px;
+  max-height: 80%;
   min-height: 100px;
   box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.3);
   background-color: #fff;
   border-radius: 8px;
 }
 
-.react-modal-header {
+.modal-header {
   padding: 1rem;
   font-weight: bold;
   font-size: large;
 }
 
-.react-modal-body {
+.modal-body {
   padding: 1rem;
 }
 
-.react-modal-footer {
+.modal-footer {
   display: flex;
   flex-direction: row;
-  margin-top: 1rem;
 }
 
 /*
@@ -98,6 +100,7 @@
 .modal-button {
   padding: 0.5rem 1rem;
 
+  flex: 1;
   min-height: 40px;
 
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
@@ -128,4 +131,20 @@
 
 /*
   Modal Component - Button / End
+*/
+
+/*
+  Modal Container - Footer / Start
+*/
+
+.modal-footer-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 16px;
+  padding: 16px;
+}
+
+/*
+  Modal Container - Footer / End
 */
