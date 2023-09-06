@@ -1,1 +1,1 @@
-import { ModalButton } from './ModalButton';
+export * from './ModalButton';
