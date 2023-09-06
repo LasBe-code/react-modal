@@ -1,0 +1,79 @@
+.react-modal-dimmer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.react-modal-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  min-height: 100px;
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.react-modal-header {
+  padding: 1rem;
+  font-weight: bold;
+  font-size: large;
+}
+
+.react-modal-body {
+  padding: 1rem;
+}
+
+.react-modal-footer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+
+@keyframes open {
+  0% {
+    opacity: 0%;
+    transform: translate(0, -100px);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes close {
+  0% {
+    opacity: 100%;
+    transform: translate(0, 0);
+  }
+
+  50% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 0%;
+  }
+}
+
+.open-modal {
+  animation-name: open;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+}
+
+.close-modal {
+  animation-name: close;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+}
