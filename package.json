@@ -1,6 +1,6 @@
 {
   "name": "@lasbe/react-modal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,6 +22,9 @@
     "useModal",
     "animation"
   ],
+  "peerDependencies": {
+    "react": ">= 16.8.0"
+  },
   "devDependencies": {
     "@types/node": "^20.12.8",
     "@types/react": "^18.3.1",
