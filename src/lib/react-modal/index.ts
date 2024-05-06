@@ -1,5 +1,3 @@
-export * from './components';
-export * from './Modal';
-export * from './ModalProvider';
-export * from './types';
+export { ModalProvider } from './ModalProvider';
 export * from './useModal';
+export * from './ModalStyle';

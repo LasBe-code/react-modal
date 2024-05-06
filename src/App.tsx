@@ -1,48 +1,31 @@
 import React from 'react';
-import { useModal } from './lib';
-import { ModalButton, ModalFooterContainer } from './lib/react-modal';
+import { ModalStyle, useModal } from './lib';
 
 function App() {
   const { openModal, closeModal } = useModal();
   return (
-    <div className="App">
-      <button
-        onClick={() =>
-          openModal({
-            header: 'HI',
-            body: 'BODY',
-            footer: (
-              <ModalFooterContainer>
-                <ModalButton onClick={closeModal}>close</ModalButton>
-                <ModalButton onClick={closeModal}>close</ModalButton>
-              </ModalFooterContainer>
-            ),
-          })
-        }
-      >
-        open modal
-      </button>
-      <button
-        onClick={() =>
-          openModal({
-            header: 'HI',
-            body: (
-              <div>
-                BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY,
-                BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY,
-                BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY, BODY,
-                <ModalFooterContainer>
-                  <ModalButton onClick={closeModal}>close</ModalButton>
-                  <ModalButton onClick={closeModal}>close</ModalButton>
-                </ModalFooterContainer>
-              </div>
-            ),
-          })
-        }
-      >
-        open modal
-      </button>
-    </div>
+    <button
+      onClick={() =>
+        openModal({
+          content: (
+            <>
+              <ModalStyle.Header>
+                <ModalStyle.Title>Header</ModalStyle.Title>
+              </ModalStyle.Header>
+              <ModalStyle.Body>Body</ModalStyle.Body>
+              <ModalStyle.Footer>
+                <ModalStyle.Button color="gray" onClick={closeModal}>
+                  Close
+                </ModalStyle.Button>
+                <ModalStyle.Button onClick={closeModal}>Submit</ModalStyle.Button>
+              </ModalStyle.Footer>
+            </>
+          ),
+        })
+      }
+    >
+      OPEN MODAL
+    </button>
   );
 }
 

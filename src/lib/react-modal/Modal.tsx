@@ -4,15 +4,12 @@ import './modal.css';
 
 export const Modal = () => {
   const modalData = useModalValue();
-  console.log('Modal: ', modalData);
   /**
    * - overflow : 스크롤 방지
-   * - margin-right: hidden시 스크롤 너비만큼 width가 늘어나기 때문에 scroll-bar, width:10px; 만큼 margin-right
    */
   useEffect(() => {
     if (modalData.isOpen) {
       document.body.style.overflow = 'hidden';
-      document.body.style.marginRight = '10px';
     }
     if (!modalData.isOpen) {
       document.body.style.removeProperty('overflow');
@@ -20,16 +17,11 @@ export const Modal = () => {
     }
   }, [modalData.isOpen]);
   return modalData.isOpen ? (
-    <div className="modal-dimmer">
-      {!!modalData.modalContents && (
-        <div className={`modal-container ${modalData.isAnimation}`}>
-          {!!modalData.modalContents.header && <div className="modal-header">{modalData.modalContents.header}</div>}
-          {!!modalData.modalContents.body && <div className="modal-body">{modalData.modalContents.body}</div>}
-          {!!modalData.modalContents.footer && <div className="modal-footer">{modalData.modalContents.footer}</div>}
-        </div>
-      )}
+    <div className="modal-container">
+      <div className="modal-dimmer" style={modalData?.options?.dimmer} />
+      <div className={`modal-content ${modalData?.options?.useAnimation && modalData.animation}`} style={modalData?.options?.body}>
+        {modalData?.content}
+      </div>
     </div>
-  ) : (
-    <></>
-  );
+  ) : null;
 };

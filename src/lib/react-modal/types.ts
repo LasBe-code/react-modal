@@ -1,32 +1,31 @@
-export type ModalContentType = string | React.ReactElement;
-
-export type ModalContentsType =
-  | {
-      header?: ModalContentType;
-      body?: ModalContentType;
-      footer?: ModalContentType;
-    }
-  | undefined;
-
 export type ModalAnimationType = 'open-modal' | 'close-modal';
 
-export type ModalValueType =
-  | {
-      isAnimation: ModalAnimationType;
-      isOpen: boolean;
-      modalContents: ModalContentsType;
-    }
-  | undefined;
+export type ModalContentsType = {
+  content: React.ReactNode;
+};
 
-export type ModalSetType =
-  | {
-      openModal: ({ header, body, footer }: OpenModalType) => void;
-      closeModal: () => void;
-    }
-  | undefined;
+export type ModalOptionType = {
+  dimmer?: React.CSSProperties;
+  body?: React.CSSProperties;
+  useAnimation?: boolean;
+};
+export type ModalValueType = {
+  animation: ModalAnimationType;
+  isOpen: boolean;
+  options?: ModalOptionType;
+} & ModalContentsType;
 
-export type OpenModalType = {
-  header: ModalContentType;
-  body: ModalContentType;
-  footer?: ModalContentType;
+export type OpenModalPropsType = {
+  options?: ModalOptionType;
+} & ModalContentsType;
+export type OpenModalType = (props: OpenModalPropsType) => void;
+
+export type ModalSetType = {
+  openModal: OpenModalType;
+  closeModal: () => void;
+};
+
+export type ModalProviderType = {
+  children: React.ReactElement;
+  options?: ModalOptionType;
 };

@@ -1,60 +1,50 @@
-/*
-  Modal Style / Start
-*/
-.modal-dimmer {
+/* Modal Style / Start */
+.modal-container {
+  position: fixed;
+  z-index: 999;
+  overflow-y: hidden;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: hidden;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.modal-container {
+.modal-dimmer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
   position: relative;
   display: flex;
   flex-direction: column;
-  overflow: auto;
-  max-width: 80%;
+  gap: 16px;
+  padding: 16px;
   min-width: 300px;
-  max-height: 80%;
   min-height: 100px;
-  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.3);
-  background-color: #fff;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  background-color: white;
+  border: 1px solid rgba(200, 200, 200, 0.1);
   border-radius: 8px;
 }
+/* Modal Style / End */
 
-.modal-header {
-  padding: 1rem;
-  font-weight: bold;
-  font-size: large;
-}
-
-.modal-body {
-  padding: 1rem;
-}
-
-.modal-footer {
-  display: flex;
-  flex-direction: row;
-}
-
-/*
-  Modal Style / End
-*/
-
-/*
-  Modal Animation / Start
-*/
+/* Modal Animation / Start */
 @keyframes open {
   0% {
     opacity: 0%;
-    transform: translate(0, -100px);
+    transform: translate(0, -50px);
   }
 
   100% {
@@ -80,71 +70,55 @@
 
 .open-modal {
   animation-name: open;
-  animation-duration: 0.3s;
+  animation-duration: 0.2s;
   animation-timing-function: ease-out;
 }
 
 .close-modal {
   animation-name: close;
-  animation-duration: 0.3s;
+  animation-duration: 0.2s;
   animation-timing-function: ease-out;
 }
+/* Modal Animation / End */
 
-/*
-  Modal Animation / End
-*/
+/* Modal Component / Start */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-/*
-  Modal Component - Button / Start
-*/
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
 .modal-button {
-  padding: 0.5rem 1rem;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 1;
-  min-height: 40px;
-
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
+  padding: 8px 16px;
   border: none;
   border-radius: 4px;
-  background: #306fd5;
-
-  color: #dee2e6;
-  font-size: 16px;
-  font-weight: 600;
-
-  transition: 0.1s;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
 }
+
 .modal-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 1px 6px 5px rgba(0, 0, 0, 0.6);
-}
-.modal-button:active {
   opacity: 0.8;
-  transform: translateY(0px);
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
 }
-.modal-button:disabled {
-  opacity: 0.5;
-  transform: none;
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
-}
-
-/*
-  Modal Component - Button / End
-*/
-
-/*
-  Modal Container - Footer / Start
-*/
-
-.modal-footer-container {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  gap: 16px;
-  padding: 16px;
-}
-
-/*
-  Modal Container - Footer / End
-*/

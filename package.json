@@ -1,10 +1,15 @@
 {
   "name": "@lasbe/react-modal",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "browser": "./browser/specific/main.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.js"
+    }
+  },
   "author": {
     "name": "LasBe",
     "email": "devlasbe@gmail.com",
@@ -17,9 +22,6 @@
     "useModal",
     "animation"
   ],
-  "peerDependencies": {
-    "react": ">= 16.8.0"
-  },
   "devDependencies": {
     "@types/node": "^20.12.8",
     "@types/react": "^18.3.1",
@@ -34,13 +36,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "rm -rf dist && mkdir dist && tsc && cp src/lib/react-modal/modal.css dist/react-modal/modal.css"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "compile": "rm -rf dist && mkdir dist && tsc && cp src/lib/react-modal/modal.css dist/react-modal/modal.css"
   },
   "browserslist": {
     "production": [
